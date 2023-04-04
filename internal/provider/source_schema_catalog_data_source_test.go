@@ -1,11 +1,14 @@
 package provider
 
 import (
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 	"testing"
+
+	"github.com/hashicorp/terraform-plugin-sdk/helper/structure"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
 )
 
 func TestAccDataSourceSourceSchemaCatalog(t *testing.T) {
+	json_schema, _ := structure.NormalizeJsonString("{\"type\":\"object\",\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"properties\":{\"id\":{\"type\":\"integer\"},\"uid\":{\"type\":\"string\"},\"brand\":{\"type\":\"string\"},\"equipment\":{\"type\":\"string\"}}}")
 	resource.Test(t, resource.TestCase{
 		PreCheck:                 func() { testAccPreCheck(t) },
 		ProtoV6ProviderFactories: testAccProtoV6ProviderFactories,
@@ -16,7 +19,7 @@ func TestAccDataSourceSourceSchemaCatalog(t *testing.T) {
 					resource.TestCheckResourceAttrPair("data.airbyte_source_schema_catalog.test", "source_id", "airbyte_source.test", "id"),
 					resource.TestCheckResourceAttr("data.airbyte_source_schema_catalog.test", "sync_catalog.#", "1"),
 					resource.TestCheckResourceAttr("data.airbyte_source_schema_catalog.test", "sync_catalog.0.source_schema.name", "appliances"),
-					resource.TestCheckResourceAttr("data.airbyte_source_schema_catalog.test", "sync_catalog.0.source_schema.json_schema", "{\"type\":\"object\",\"$schema\":\"http://json-schema.org/draft-07/schema#\",\"properties\":{\"id\":{\"type\":\"integer\"},\"uid\":{\"type\":\"string\"},\"brand\":{\"type\":\"string\"},\"equipment\":{\"type\":\"string\"}}}"),
+					resource.TestCheckResourceAttr("data.airbyte_source_schema_catalog.test", "sync_catalog.0.source_schema.json_schema", json_schema),
 					resource.TestCheckResourceAttr("data.airbyte_source_schema_catalog.test", "sync_catalog.0.source_schema.supported_sync_modes.0", "incremental"),
 					resource.TestCheckResourceAttr("data.airbyte_source_schema_catalog.test", "sync_catalog.0.source_schema.supported_sync_modes.1", "full_refresh"),
 				),
