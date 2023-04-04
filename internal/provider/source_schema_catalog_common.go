@@ -2,9 +2,11 @@ package provider
 
 import (
 	"fmt"
+
 	"github.com/hashicorp/terraform-plugin-framework/attr"
 	"github.com/hashicorp/terraform-plugin-framework/diag"
 	"github.com/hashicorp/terraform-plugin-framework/types"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/structure"
 	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/apiclient"
 )
 
@@ -61,7 +63,8 @@ func FlattenSyncCatalog(ssc *apiclient.SyncCatalog) (*[]SyncCatalogModel, diag.D
 				diags.AddError("Client Error", fmt.Sprintf("Unable to read connection, got error: %s", err))
 				return data, diags
 			}
-			stream.SourceSchema.JsonSchema = types.StringValue(string(config))
+			normalizedString, _ := structure.NormalizeJsonString(string(config))
+			stream.SourceSchema.JsonSchema = types.StringValue(normalizedString)
 
 			if val.Stream.SupportedSyncModes != nil {
 				var modes []attr.Value
