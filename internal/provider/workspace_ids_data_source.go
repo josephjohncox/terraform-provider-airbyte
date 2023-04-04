@@ -8,8 +8,8 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/diag"
 	"github.com/hashicorp/terraform-plugin-framework/tfsdk"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/apiclient"
-	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/utils"
+	"github.com/eabrouwer3/terraform-provider-airbyte/internal/apiclient"
+	"github.com/eabrouwer3/terraform-provider-airbyte/internal/utils"
 	"strconv"
 	"time"
 )

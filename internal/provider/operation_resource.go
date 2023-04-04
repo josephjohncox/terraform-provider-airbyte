@@ -10,8 +10,8 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/tfsdk"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/apiclient"
-	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/utils"
+	"github.com/eabrouwer3/terraform-provider-airbyte/internal/apiclient"
+	"github.com/eabrouwer3/terraform-provider-airbyte/internal/utils"
 )
 
 // Ensure provider defined types fully satisfy framework interfaces

@@ -3,12 +3,13 @@ package provider
 import (
 	"context"
 	"fmt"
+
+	"github.com/eabrouwer3/terraform-provider-airbyte/internal/apiclient"
 	"github.com/hashicorp/terraform-plugin-framework/diag"
 	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/tfsdk"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/apiclient"
 )
 
 // Ensure provider defined types fully satisfy framework interfaces

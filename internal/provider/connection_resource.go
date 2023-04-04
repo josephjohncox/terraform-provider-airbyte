@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"github.com/eabrouwer3/terraform-provider-airbyte/internal/apiclient"
+	"github.com/eabrouwer3/terraform-provider-airbyte/internal/utils"
 	"github.com/hashicorp/terraform-plugin-framework-validators/listvalidator"
 	"github.com/hashicorp/terraform-plugin-framework-validators/schemavalidator"
 	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
@@ -13,8 +15,6 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/tfsdk"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/apiclient"
-	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/utils"
 )
 
 // Ensure provider defined types fully satisfy framework interfaces

@@ -2,12 +2,13 @@ package provider
 
 import (
 	"context"
-	"github.com/hashicorp/go-retryablehttp"
-	"github.com/hashicorp/terraform-plugin-framework/path"
-	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/apiclient"
 	"net/http"
 	"os"
 	"time"
+
+	"github.com/eabrouwer3/terraform-provider-airbyte/internal/apiclient"
+	"github.com/hashicorp/go-retryablehttp"
+	"github.com/hashicorp/terraform-plugin-framework/path"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/diag"

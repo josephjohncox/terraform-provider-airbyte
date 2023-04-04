@@ -3,11 +3,11 @@ package provider
 import (
 	"fmt"
 
+	"github.com/eabrouwer3/terraform-provider-airbyte/internal/apiclient"
 	"github.com/hashicorp/terraform-plugin-framework/attr"
 	"github.com/hashicorp/terraform-plugin-framework/diag"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/structure"
-	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/apiclient"
 )
 
 // SourceSchemaCatalogModel describes the data source data model.

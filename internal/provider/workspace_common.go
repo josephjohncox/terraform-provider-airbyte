@@ -2,7 +2,7 @@ package provider
 
 import (
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/apiclient"
+	"github.com/eabrouwer3/terraform-provider-airbyte/internal/apiclient"
 )
 
 // WorkspaceModel describes the data source data model.
