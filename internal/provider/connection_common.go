@@ -1,10 +1,10 @@
 package provider
 
 import (
+	"github.com/eabrouwer3/terraform-provider-airbyte/internal/apiclient"
 	"github.com/hashicorp/terraform-plugin-framework/attr"
 	"github.com/hashicorp/terraform-plugin-framework/diag"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/eabrouwer3/terraform-provider-airbyte/internal/apiclient"
 )
 
 // ConnectionModel describes the data source data model.

@@ -306,6 +306,7 @@ func (r *ConnectionResource) GetSchema(ctx context.Context) (tfsdk.Schema, diag.
 				Description: "Source Catalog ID",
 				Type:        types.StringType,
 				Optional:    true,
+				Computed:    true,
 			},
 			"geography": {
 				Description: "Allowed Values: 'auto' | 'us' | 'eu'",
