@@ -92,6 +92,7 @@ resource "airbyte_connection" "e2e" {
     destination_config = merge(
       data.airbyte_source_schema_catalog.custom.sync_catalog.0.destination_config,
       {
+        selected              = true
         alias_name            = "data_stream_destination_alias"
         destination_sync_mode = "overwrite"
         sync_mode             = "full_refresh"
